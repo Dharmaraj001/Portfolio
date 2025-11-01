@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@layer base {
+  /* custom base styles */
+}
+
+@layer components {
+  /* custom components */
+}
+
+@layer utilities {
+  /* custom utilities */
+}
+
+
+body{
+    /* 🌌 Global background gradient */
+  background: linear-gradient(to bottom right, #1a1a2e, #16213e, #0f3460);
+  background-attachment: fixed; /* keeps gradient still on scroll */
+  color: white; /* optional: ensures text stays visible */
+}
