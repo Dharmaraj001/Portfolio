@@ -1,4 +1,6 @@
 import React from "react";
+import { GiGalaxy, GiPlanetCore, GiStarProminences, GiSpaceSuit, GiRocketFlight } from "react-icons/gi";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -22,8 +24,17 @@ const About = () => {
           <div></div>
           {/* Identity Card */}
           <div className="bg-white/10 p-7 rounded-2xl backdrop-blur-md border-[1px] border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.15)] mt-35">
-            <h3 className="text-purple-400 font-semibold text-lg">💫 Identity</h3>
-            <p className="text-xl font-bold mt-1">Alex Cosmos</p>
+            <div className="flex items-center gap-2 text-sky-400">
+              <motion.div
+                animate={{ y: [3, -3, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="text-sky-400 drop-shadow-[0_0_10px_rgba(56,189,248,0.7)] hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(56,189,248,0.9)] transition-transform"
+              >
+                <GiSpaceSuit size={28} />
+              </motion.div>
+              <span className="font-semibold text-lg">Callsign</span>
+            </div>
+            <p className=" mt-2 ml-1 text-2xl font-bold bg-gradient-to-r from-[#ffffff] via-[#1429ea] to-[#38BDF8] bg-clip-text text-transparent">Dharmaraj</p>
             <p className="text-gray-300 mt-2">
               A digital explorer navigating the infinite possibilities of code
             </p>
@@ -31,8 +42,18 @@ const About = () => {
 
           {/* Role Card */}
           <div className="bg-white/10 p-7 rounded-2xl backdrop-blur-md border-[1px] border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.15)]">
-            <h3 className="text-purple-400 font-semibold text-lg">🚀 Role</h3>
-            <p className="text-xl font-bold mt-1">Full-Stack Developer</p>
+            <div className="flex items-center gap-2 text-sky-400">
+              <motion.div
+                animate={{ y: [3, -3, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                className="text-purple-400 drop-shadow-[0_0_10px_rgba(168,85,247,0.7)] hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(168,85,247,0.9)] transition-transform"
+              >
+                <GiRocketFlight size={28} />
+              </motion.div>
+              <span className="font-semibold text-lg">Role</span>
+            </div>
+
+            <p className="mt-2 ml-1 text-2xl font-bold bg-gradient-to-r from-[#ffffff] via-[#1429ea] to-[#38BDF8] bg-clip-text text-transparent">Full-Stack Developer</p>
             <p className="text-gray-300 mt-2">
               Crafting seamless experiences from frontend to backend,
               transforming ideas into reality
@@ -41,7 +62,17 @@ const About = () => {
 
           {/* Mission Card */}
           <div className="bg-white/10 p-7 rounded-2xl backdrop-blur-md border-[1px] border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.15)]">
-            <h3 className="text-purple-400 font-semibold text-lg">🌌 Mission</h3>
+            <div className="flex items-center gap-2 text-sky-400">
+              <motion.div
+                animate={{ y: [3, -3, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                className="text-indigo-400 drop-shadow-[0_0_10px_rgba(129,140,248,0.7)] hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(129,140,248,0.9)] transition-transform"
+              >
+                <GiGalaxy size={28} />
+              </motion.div>
+              <span className="font-semibold text-lg">Cosmic Vision</span>
+            </div>
+
             <p className="text-gray-300 mt-2">
               To push the boundaries of web development, creating innovative
               solutions that inspire and empower users across the digital
