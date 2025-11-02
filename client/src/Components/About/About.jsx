@@ -1,23 +1,178 @@
 import React from "react";
-import { GiGalaxy, GiPlanetCore, GiStarProminences, GiSpaceSuit, GiRocketFlight } from "react-icons/gi";
-import { motion } from "framer-motion";
+import { GiGalaxy, GiPlanetCore, GiStarProminences, GiSpaceSuit, GiRocketFlight, GiProcessor } from "react-icons/gi";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs } from "@fortawesome/free-brands-svg-icons";
+import img1 from "../../assets/img1.jpg";
+import img2 from "../../assets/img2.jpg";
+import img3 from "../../assets/img3.jpg";
+
+const skills = [
+  "Full Stack Developer",
+  "MERN Developer",
+  "Backend Engineer",
+  "UI/UX Enthusiast",
+];
 
 const About = () => {
+
+   const [index, setIndex] = useState(0);
+
+     useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % skills.length);
+    }, 2500); // change every 2.5 seconds
+    return () => clearInterval(timer);
+  }, []);
+
+    const current = skills[index];
+
   return (
     <div className="min-h-screen flex items-center justify-center text-white px-10 over mb-20">
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl gap-10">
         {/* ===== Left Section (Astronaut + Glow) ===== */}
-        <div className="relative flex justify-center items-center md:basis-[40%]">
-          <div className="w-64 h-64 rounded-full overflow-hidden shadow-[0_0_50px_rgba(120,80,255,0.4)] hover:bg-amber-200">
+        <div className="relative flex flex-col justify-center items-center md:basis-[40%] mt-40">
+          <div className="w-64 h-64 rounded-full overflow-hidden shadow-[0_0_50px_rgba(120,80,255,0.4)]">
             <img
-              src="/astronaut.png" // your astronaut image path
-              alt="Astronaut"
+              src={""} // your astronaut image path
+              alt="Profile image"
               className="w-full h-full object-cover"
             />
           </div>
           {/* Optional outer glow effect */}
           <div className="absolute inset-0 blur-3xl bg-purple-500/20 rounded-full -z-10"></div>
-        </div>
+
+      {/* Skills section */}
+          <div className="relative flex justify-center items-center">
+      {/* background blur / glow */}
+      <div className="absolute inset-0 blur-3xl bg-gradient-to-tr from-purple-500/10 via-transparent to-blue-400/10 rounded-xl -z-10" />
+
+ 
+    {/* 3D Top-Rolling Skill Box */}
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 80,
+        rotateX: 60,
+        scale: 0.9,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        rotateX: 0,
+        scale: 1,
+      }}
+      transition={{
+        duration: 1.2,
+        ease: "easeOut",
+      }}
+      className="mt-5 text-center text-lg font-bold px-6 py-3 rounded-2xl 
+                 bg-white/10 backdrop-blur-md border border-white/20
+                 shadow-[0_0_25px_rgba(255,255,255,0.15)]
+                 [transform-style:preserve-3d] [perspective:1000px]"
+    >
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={current}
+          initial={{
+            opacity: 0,
+            rotateX: 90,
+            y: 10,
+          }}
+          animate={{
+            opacity: 1,
+            rotateX: 0,
+            y: 0,
+          }}
+          exit={{
+            opacity: 0,
+            rotateX: -90,
+            y: -10,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: "easeInOut",
+          }}
+          className={`block bg-gradient-to-r ${
+            index === 0
+              ? "from-blue-400 via-purple-400 to-pink-400"
+              : index === 1
+              ? "from-emerald-400 via-cyan-400 to-sky-400"
+              : index === 2
+              ? "from-amber-300 via-pink-400 to-rose-500"
+              : "from-indigo-400 via-sky-400 to-cyan-300"
+          } bg-clip-text text-transparent`}
+        >
+          {current}
+        </motion.span>
+      </AnimatePresence>
+    </motion.div>
+    </div>
+          
+      <div className="relative flex justify-center items-center top-5  rounded-sm p-1 gap-6 text-2xl">
+
+          <div className="flex items-center justify-center gap-3 px-3 py-2
+             rounded-xl border border-white/20 
+             bg-white/20 
+             text-center transition-all duration-300 
+             hover:shadow-[0_0_1px_rgba(56,189,248,0.4)] hover:border-sky-400/10 
+             hover:scale-[1]">
+          <FontAwesomeIcon 
+          icon={faReact} 
+          className="text-sky-400 text-5xl animate-pulse-slow
+               drop-shadow-[0_0_10px_rgba(56,189,248,0.6)] 
+               transition-all duration-300 
+               hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.9)] hover:-translate-y-1"/> <h3 className="text-2xl font-semibold bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">React</h3>
+          </div>
+
+          <div className="flex items-center justify-center gap-3 px-3 py-2
+             rounded-xl border border-white/20 
+             bg-white/20 
+             text-center transition-all duration-300 
+             hover:shadow-[0_0_1px_rgba(56,189,248,0.4)] hover:border-sky-400/10 
+             hover:scale-[1]">
+          <FontAwesomeIcon 
+          icon={faJs} 
+          className="text-[ #F7DF1E ] text-5xl animate-pulse-slow
+               drop-shadow-[0_0_10px_rgba(56,189,248,0.6)] 
+               transition-all duration-300 
+               hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.9)] hover:-translate-y-1"/> <h3 className="text-2xl font-semibold bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">React</h3>
+          </div>
+    </div>
+        
+        <div className="relative flex justify-center items-center top-6  rounded-sm p-1 gap-6 text-2xl">
+    <div className="flex items-center justify-center gap-3 px-3 py-2
+             rounded-xl border border-white/20 
+             bg-white/20 
+             text-center transition-all duration-300 
+             hover:shadow-[0_0_1px_rgba(56,189,248,0.4)] hover:border-sky-400/10 
+             hover:scale-[1]">
+          <FontAwesomeIcon 
+          icon={faReact} 
+          className="text-sky-400 text-5xl animate-pulse-slow
+               drop-shadow-[0_0_10px_rgba(56,189,248,0.6)] 
+               transition-all duration-300 
+               hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.9)] hover:-translate-y-1"/> <h3 className="text-2xl font-semibold bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">React</h3>
+          </div>
+
+          <div className="flex items-center justify-center gap-3 px-3 py-2
+             rounded-xl border border-white/20 
+             bg-white/20 
+             text-center transition-all duration-300 
+             hover:shadow-[0_0_1px_rgba(56,189,248,0.4)] hover:border-sky-400/10 
+             hover:scale-[1]">
+          <FontAwesomeIcon 
+          icon={faReact} 
+          className="text-sky-400 text-5xl animate-pulse-slow
+               drop-shadow-[0_0_10px_rgba(56,189,248,0.6)] 
+               transition-all duration-300 
+               hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.9)] hover:-translate-y-1"/> <h3 className="text-2xl font-semibold bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">React</h3>
+          </div>
+
+          </div>
+  
+      </div>
 
         {/* ===== Right Section (Identity, Role, Mission) ===== */}
         <div className="relative flex flex-col gap-6 md:basis-[40%] z-0">
@@ -59,6 +214,7 @@ const About = () => {
               transforming ideas into reality
             </p>
           </div>
+
 
           {/* Mission Card */}
           <div className="bg-white/10 p-7 rounded-2xl backdrop-blur-md border-[1px] border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.15)]">

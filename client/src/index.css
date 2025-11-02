@@ -6,7 +6,7 @@
 
   /* set full-page gradient for body */
  body {
-     background: radial-gradient(circle at 20% 20%, #1a1a1a, #000000 90%);
+     /* background: radial-gradient(circle at center, #000000 0%, #000000 90%); */
      background-attachment: fixed; /* keeps gradient still on scroll */
      color: white; /* optional: ensures text stays visible */
 }
