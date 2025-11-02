@@ -23,8 +23,12 @@ const App = () => {
   const hideNavbarFooter = location.pathname === "/";
 
   return (
-    <div className="">
+    <div className="relative min-h-screen overflow-hidden text-white">
+      {/* 🌌 Background gradient */}
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_20%_20%,#1a1a1a,#000_90%)] bg-fixed" />
+      <div className="fixed inset-0 z-0">
       <Starfield />
+      </div>
       <ScrollToTop />
       
       {/* Optional glowing background effects */}
@@ -107,8 +111,6 @@ const App = () => {
           />
         </Routes>
       </AnimatePresence>
-
-      {!hideNavbarFooter && <Footer />}
     </div>
   );
 };

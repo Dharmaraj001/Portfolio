@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center text-white px-10 over ">
+    <div className="min-h-screen flex items-center justify-center text-white px-10 over mb-20">
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl gap-10">
         {/* ===== Left Section (Astronaut + Glow) ===== */}
         <div className="relative flex justify-center items-center md:basis-[40%]">
@@ -70,7 +70,7 @@ const About = () => {
               >
                 <GiGalaxy size={28} />
               </motion.div>
-              <span className="font-semibold text-lg">Cosmic Vision</span>
+              <span className="font-semibold text-lg">Cosmic Vision.</span>
             </div>
 
             <p className="text-gray-300 mt-2">
