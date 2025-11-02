@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
+/* add your custom global styles using @layer base or regular CSS */
 @layer base {
-  /* custom base styles */
+  
+
+  /* set full-page gradient for body */
+ body {
+     background: radial-gradient(circle at 20% 20%, #1a1a1a, #000000 90%);
+     background-attachment: fixed; /* keeps gradient still on scroll */
+     color: white; /* optional: ensures text stays visible */
 }
 
 @layer components {
@@ -10,12 +17,15 @@
 
 @layer utilities {
   /* custom utilities */
+  }
 }
 
+/* Hide scrollbar globally */
+::-webkit-scrollbar {
+  display: none;
+}
 
-body{
-    /* 🌌 Global background gradient */
-  background: linear-gradient(to bottom right, #1a1a2e, #16213e, #0f3460);
-  background-attachment: fixed; /* keeps gradient still on scroll */
-  color: white; /* optional: ensures text stays visible */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
