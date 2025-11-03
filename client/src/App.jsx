@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./Ui/ScrollToTop";
 
-import Navbar from "./Components/Navbar/navbar";
+import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import About from "./Components/About/About";
 import Projects from "./Components/Projects/Projects";
