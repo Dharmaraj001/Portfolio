@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
 import ScrollToTop from "./Ui/ScrollToTop";
 
 import Navbar from "./Components/Navbar/navbar";
@@ -12,113 +11,38 @@ import Contact from "./Components/Contact/Contact";
 import Starfield from "./Ui/Starfield";
 import BottomGlowLine from "./Ui/BottomGlowLine";
 
-const pageVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
-};
-
 const App = () => {
   const location = useLocation();
   const hideNavbarFooter = location.pathname === "/";
 
   return (
-    <>
-    
-    <div className="min-h-screen">
-      
-      {/* 🌌 Background gradient */}
-      {/* <div className="fixed inset-0 bg-[radial-gradient(circle_at_20%_20%,#1a1a1a,#000_90%)] bg-fixed" /> */}
+    <div className="min-h-screen relative overflow-hidden">
+      {/* 🌌 Background starfield */}
       <div className="fixed inset-0 z-0">
-      <Starfield />
+        <Starfield />
       </div>
+
+      
+  <div className="relative z-10">
       <ScrollToTop />
-      
-      {/* Optional glowing background effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,100,255,0.15),transparent_10%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.05),transparent_70%)]" />
 
-      
-
+      {/* Navbar (hidden on home if needed) */}
       {!hideNavbarFooter && <Navbar />}
 
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route
-            path="/"
-            element={
-              <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.6 }}
-              >
-                <Hero />
-              </motion.div>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.6 }}
-              >
-                <About />
-              </motion.div>
-            }
-          />
-          <Route
-            path="/projects"
-            element={
-              <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.6 }}
-              >
-                <Projects />
-              </motion.div>
-            }
-          />
-          <Route
-            path="/skills"
-            element={
-              <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.6 }}
-              >
-                <Skills />
-              </motion.div>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.6 }}
-              >
-                <Contact />
-              </motion.div>
-            }
-          />
-        </Routes>
-      </AnimatePresence>
+      {/* Page routes */}
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+      {/* Bottom glowing line */}
       <BottomGlowLine />
     </div>
-    </>
+    </div>
+    
   );
 };
 
