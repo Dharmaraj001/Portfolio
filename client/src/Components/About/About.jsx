@@ -3,10 +3,12 @@ import { GiGalaxy, GiPlanetCore, GiStarProminences, GiSpaceSuit, GiRocketFlight,
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs } from "@fortawesome/free-brands-svg-icons";
+import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs, faJava} from "@fortawesome/free-brands-svg-icons";
 import img1 from "../../assets/img1.jpg";
 import img2 from "../../assets/img2.jpg";
 import img3 from "../../assets/img3.jpg";
+import js1 from "../../assets/js1.png";
+import nodejs2 from "../../assets/nodejs2.png"
 
 const skills = [
   "Full Stack Developer",
@@ -33,7 +35,7 @@ const About = () => {
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl gap-10">
         {/* ===== Left Section (Astronaut + Glow) ===== */}
         <div className="relative flex flex-col justify-center items-center md:basis-[40%] mt-40">
-          <div className="w-64 h-64 rounded-full overflow-hidden shadow-[0_0_50px_rgba(120,80,255,0.4)]">
+          <div className="w-64 h-64 rounded-full overflow-hidden shadow-[0_0_30px_rgba(50,60,150,0.4)]">
             <img
               src={""} // your astronaut image path
               alt="Profile image"
@@ -41,7 +43,7 @@ const About = () => {
             />
           </div>
           {/* Optional outer glow effect */}
-          <div className="absolute inset-0 blur-3xl bg-purple-500/20 rounded-full -z-10"></div>
+          <div className="absolute inset-0 blur-3xl bg-white-50/10 rounded-full -z-10"></div>
 
       {/* Skills section */}
           <div className="relative flex justify-center items-center">
@@ -110,7 +112,7 @@ const About = () => {
     </motion.div>
     </div>
           
-      <div className="relative flex justify-center items-center top-5  rounded-sm p-1 gap-6 text-2xl">
+      <div className="relative flex justify-center items-center top-5  rounded-sm p-1 gap-6 text-2xl mb-2">
 
           <div className="flex items-center justify-center gap-3 px-3 py-2
              rounded-xl border border-white/20 
@@ -120,10 +122,22 @@ const About = () => {
              hover:scale-[1]">
           <FontAwesomeIcon 
           icon={faReact} 
-          className="text-sky-400 text-5xl animate-pulse-slow
+          className="text-sky-400 text-3xl animate-pulse-slow
                drop-shadow-[0_0_10px_rgba(56,189,248,0.6)] 
                transition-all duration-300 
-               hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.9)] hover:-translate-y-1"/> <h3 className="text-2xl font-semibold bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">React</h3>
+               hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.9)] hover:-translate-y-1"/>
+          </div>
+
+          <div className="flex items-center justify-center gap-3 px-3 py-2
+             rounded-xl border border-white/20 
+             bg-white/20 
+             text-center transition-all duration-300 
+             hover:shadow-[0_0_1px_rgba(56,189,248,0.4)] hover:border-sky-400/10 
+             hover:scale-[1]">
+              <img src={js1} alt="js logo" className="w-7.5 h-7.5 animate-pulse-slow
+               drop-shadow-[0_0_10px_rgba(247,223,30,0.6)]
+               transition-all duration-300 
+               hover:drop-shadow-[0_0_25px_rgba(247, 223, 30, 0.6)] hover:-translate-y-1" />
           </div>
 
           <div className="flex items-center justify-center gap-3 px-3 py-2
@@ -133,43 +147,48 @@ const About = () => {
              hover:shadow-[0_0_1px_rgba(56,189,248,0.4)] hover:border-sky-400/10 
              hover:scale-[1]">
           <FontAwesomeIcon 
-          icon={faJs} 
-          className="text-[ #F7DF1E ] text-5xl animate-pulse-slow
-               drop-shadow-[0_0_10px_rgba(56,189,248,0.6)] 
+          icon={faJava} 
+          className=" text-3xl animate-pulse-slow
+              drop-shadow-[0_0_10px_rgba(240,81,51,0.6)]
                transition-all duration-300 
-               hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.9)] hover:-translate-y-1"/> <h3 className="text-2xl font-semibold bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">React</h3>
+               hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.9)] hover:-translate-y-1"/>
+          </div>
+
+          <div className="flex items-center justify-center gap-3 px-3 py-2
+             rounded-xl border border-white/20 
+             bg-white/20 
+             text-center transition-all duration-300 
+             hover:shadow-[0_0_1px_rgba(56,189,248,0.4)] hover:border-sky-400/10 
+             hover:scale-[1]">
+          <img src={nodejs2} alt="node js icon" className="h-7.5 w-7.5 animate-pulse-slow
+               drop-shadow-[0_0_10px_rgba(94,186,125,0.6)] 
+               transition-all duration-300 
+               hover:drop-shadow-[0_0_25px_rgba(247, 223, 30, 0.6)] hover:-translate-y-1"/> 
+        
           </div>
     </div>
         
-        <div className="relative flex justify-center items-center top-6  rounded-sm p-1 gap-6 text-2xl">
-    <div className="flex items-center justify-center gap-3 px-3 py-2
-             rounded-xl border border-white/20 
-             bg-white/20 
-             text-center transition-all duration-300 
-             hover:shadow-[0_0_1px_rgba(56,189,248,0.4)] hover:border-sky-400/10 
-             hover:scale-[1]">
-          <FontAwesomeIcon 
-          icon={faReact} 
-          className="text-sky-400 text-5xl animate-pulse-slow
-               drop-shadow-[0_0_10px_rgba(56,189,248,0.6)] 
-               transition-all duration-300 
-               hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.9)] hover:-translate-y-1"/> <h3 className="text-2xl font-semibold bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">React</h3>
-          </div>
-
-          <div className="flex items-center justify-center gap-3 px-3 py-2
-             rounded-xl border border-white/20 
-             bg-white/20 
-             text-center transition-all duration-300 
-             hover:shadow-[0_0_1px_rgba(56,189,248,0.4)] hover:border-sky-400/10 
-             hover:scale-[1]">
-          <FontAwesomeIcon 
-          icon={faReact} 
-          className="text-sky-400 text-5xl animate-pulse-slow
-               drop-shadow-[0_0_10px_rgba(56,189,248,0.6)] 
-               transition-all duration-300 
-               hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.9)] hover:-translate-y-1"/> <h3 className="text-2xl font-semibold bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">React</h3>
-          </div>
-
+        <div className="flex justify-center gap-4 mt-6">
+    
+              {/* Resume Button */}
+          <a
+           href="/resume.pdf"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-medium shadow-[0_0_10px_rgba(56,189,248,0.5)] hover:scale-105 hover:shadow-[0_0_15px_rgba(56,189,248,0.7)] transition-all duration-300"
+            >
+           Resume
+            </a>
+                
+               {/* LinkedIn Button */}
+            <a
+            href="https://www.linkedin.com/in/yourprofile"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 bg-[#0077B5]/90 rounded-lg text-white font-medium shadow-[0_0_10px_rgba(0,119,181,0.5)] hover:bg-[#0077B5] hover:scale-105 hover:shadow-[0_0_15px_rgba(0,119,181,0.7)] transition-all duration-300"
+            >
+             LinkedIn
+            </a>
           </div>
   
       </div>
