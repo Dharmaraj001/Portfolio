@@ -5,12 +5,12 @@ import ScrollToTop from "./Ui/ScrollToTop";
 
 import Navbar from "./Components/Navbar/navbar";
 import Hero from "./Components/Hero/Hero";
-import Footer from "./Components/Footer/Footer";
 import About from "./Components/About/About";
 import Projects from "./Components/Projects/Projects";
 import Skills from "./Components/Skills/Skills";
 import Contact from "./Components/Contact/Contact";
 import Starfield from "./Ui/Starfield";
+import BottomGlowLine from "./Ui/BottomGlowLine";
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -23,7 +23,10 @@ const App = () => {
   const hideNavbarFooter = location.pathname === "/";
 
   return (
-    <div className="relative min-h-screen overflow-hidden text-white">
+    <>
+    
+    <div className="min-h-screen">
+      
       {/* 🌌 Background gradient */}
       {/* <div className="fixed inset-0 bg-[radial-gradient(circle_at_20%_20%,#1a1a1a,#000_90%)] bg-fixed" /> */}
       <div className="fixed inset-0 z-0">
@@ -34,6 +37,8 @@ const App = () => {
       {/* Optional glowing background effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,100,255,0.15),transparent_10%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.05),transparent_70%)]" />
+
+      
 
       {!hideNavbarFooter && <Navbar />}
 
@@ -111,7 +116,9 @@ const App = () => {
           />
         </Routes>
       </AnimatePresence>
+      <BottomGlowLine />
     </div>
+    </>
   );
 };
 
