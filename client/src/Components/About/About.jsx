@@ -182,7 +182,7 @@ const About = () => {
                 
                {/* LinkedIn Button */}
             <a
-            href="https://www.linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/dharmarajs001/"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 bg-[#0077B5]/90 rounded-lg text-white font-medium shadow-[0_0_10px_rgba(0,119,181,0.5)] hover:bg-[#0077B5] hover:scale-105 hover:shadow-[0_0_15px_rgba(0,119,181,0.7)] transition-all duration-300"
