@@ -10,7 +10,7 @@ const Hero = () => {
         <motion.h1 
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1.2 }}
         className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-3 leading-snug'>
             <span className='text-4xl sm:text-5xl md:text-6xl' style={{display:"inline-block", animation: "spin 6s linear infinite"}}>🌐</span>Welcome to <span className='relative bg-gradient-to-r from-yellow-200 via-orange-400 to-pink-500200%_200%] animate-gradientMove bg-clip-text text-transparent font-extrabold'>Space</span> <br className='block sm:hidden'/> themed portfolio
         </motion.h1>
@@ -36,7 +36,7 @@ const Hero = () => {
         <motion.div 
             initial={{opacity:0, y:-30}}
             animate={{opacity:1, y:0}}
-            transition={{duration:1}}
+            transition={{duration:1.2}}
         className='mt-5 bg-white/10 border border-white/40 rounded-2xl p-3 text-sm sm:text-base md:text-lg text-gray-300 mb-5 backdrop-blur-sm shadow-md hover:bg-white/15'>
             Built with <span className='text-[#75C2D9] font-bold'>React </span> <span className='font-bold'>+</span> <span className='text-yellow-300 font-bold'> Framer Motion </span><span className='font-bold'>+</span> <span className='font-bold text-[#4EB9FA]'>Tailwind</span>
         </motion.div>
@@ -45,7 +45,7 @@ const Hero = () => {
         <motion.div 
             initial={{opacity:0, y:30}}
             animate={{opacity:1}}
-            transition={{duration:1}}
+            transition={{duration:1.2}}
         className='mt-3'>
             <Link 
             to="/about"
