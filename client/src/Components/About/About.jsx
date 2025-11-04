@@ -172,7 +172,7 @@ const About = () => {
     
               {/* Resume Button */}
           <a
-           href="/resume.pdf"
+           href="https://drive.google.com/file/d/13evs9IyUlJMIiir4u6fP8F-q3UwHpSWH/view?usp=sharing"
            target="_blank"
            rel="noopener noreferrer"
            className="px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-medium shadow-[0_0_10px_rgba(56,189,248,0.5)] hover:scale-105 hover:shadow-[0_0_15px_rgba(56,189,248,0.7)] transition-all duration-300"
